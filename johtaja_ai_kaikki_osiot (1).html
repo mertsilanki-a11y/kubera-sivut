@@ -1,0 +1,570 @@
+<!-- ============================================================
+     JOHTAJA.AI — KAIKKI UUDET OSIOT KAJABIIN
+     Rakenne sivujärjestyksessä napin jälkeen:
+     1. Kenelle tämä on
+     2. Sosiaalinen todiste (referenssit)
+     3. Ohjelma / paketit
+     4. Ennen vs. Jälkeen
+     5. Erottautumistekijät (3 kpl)
+     6. Valmentaja
+     7. Loppu-CTA
+     ============================================================ -->
+
+<style>
+  .kba2 * { box-sizing: border-box; margin: 0; padding: 0; }
+  .kba2 {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1a1a1a;
+    padding: 0 20px;
+  }
+
+  /* Typografia */
+  .kba2-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: #185FA5; margin: 48px 0 8px;
+  }
+  .kba2-h2 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700; line-height: 1.25;
+    color: #1a1a1a; margin-bottom: 16px;
+  }
+  .kba2-p {
+    font-size: 16px; line-height: 1.85;
+    color: #1a1a1a; margin-bottom: 14px;
+  }
+  .kba2-rule { border: none; border-top: 1px solid #e0e0e0; margin: 48px 0 0; }
+
+  /* ── 1. KENELLE ── */
+  .kba2-who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 20px 0;
+  }
+  .kba2-who-card {
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #185FA5;
+    border-radius: 6px;
+    padding: 18px 16px;
+  }
+  .kba2-who-role {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 700;
+    color: #185FA5; margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  .kba2-who-pain {
+    font-size: 13px; line-height: 1.55; color: #444;
+  }
+
+  /* ── 2. REFERENSSIT ── */
+  .kba2-quotes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px; margin: 20px 0;
+  }
+  .kba2-quote {
+    background: #f8f8f8;
+    border-left: 3px solid #185FA5;
+    border-radius: 0 6px 6px 0;
+    padding: 16px 18px;
+  }
+  .kba2-quote-text {
+    font-style: italic; font-size: 14px;
+    line-height: 1.65; color: #333;
+    margin-bottom: 10px;
+  }
+  .kba2-quote-name {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 700; color: #1a1a1a;
+  }
+  .kba2-quote-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #888;
+  }
+  .kba2-logos {
+    display: flex; flex-wrap: wrap;
+    gap: 10px; align-items: center;
+    margin: 16px 0;
+  }
+  .kba2-logo-pill {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; font-weight: 600;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    background: #fafafa;
+  }
+  .kba2-bigquote {
+    font-size: clamp(17px, 2.5vw, 22px);
+    font-style: italic;
+    text-align: center;
+    color: #1a1a1a;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 1px solid #ddd;
+    padding: 22px 0;
+    margin: 28px 0;
+    line-height: 1.5;
+  }
+
+  /* ── 3. OHJELMA / PAKETIT ── */
+  .kba2-phases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px; margin: 20px 0;
+  }
+  .kba2-phase {
+    background: #EAF2FB;
+    border: 1px solid #C5DCF5;
+    border-radius: 8px;
+    padding: 20px 18px;
+  }
+  .kba2-phase-num {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: #185FA5; letter-spacing: .08em;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .kba2-phase-title {
+    font-size: 16px; font-weight: 700;
+    color: #1a1a1a; margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .kba2-phase-items {
+    list-style: none; padding: 0;
+  }
+  .kba2-phase-items li {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; line-height: 1.55;
+    color: #444; padding: 4px 0;
+    border-bottom: 1px solid #d0e6f7;
+    padding-left: 14px; position: relative;
+  }
+  .kba2-phase-items li:last-child { border-bottom: none; }
+  .kba2-phase-items li::before {
+    content: "→"; position: absolute;
+    left: 0; color: #185FA5;
+  }
+
+  /* Investointi-boksit */
+  .kba2-invest {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin: 20px 0;
+  }
+  .kba2-invest-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 16px 14px;
+    text-align: center;
+  }
+  .kba2-invest-card.featured {
+    border-color: #185FA5;
+    background: #EAF2FB;
+  }
+  .kba2-invest-item {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #888;
+    margin-bottom: 6px;
+  }
+  .kba2-invest-price {
+    font-size: 22px; font-weight: 700;
+    color: #185FA5; line-height: 1;
+    margin-bottom: 4px;
+  }
+  .kba2-invest-desc {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #666;
+    line-height: 1.4;
+  }
+  .kba2-invest-note {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; color: #888;
+    margin-top: 12px; font-style: italic;
+  }
+
+  /* ── 4. ENNEN / JÄLKEEN ── */
+  .kba2-bv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0; margin: 20px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; overflow: hidden;
+  }
+  .kba2-bv-col { padding: 20px 18px; }
+  .kba2-bv-col.before { background: #fdf6f6; border-right: 1px solid #e0e0e0; }
+  .kba2-bv-col.after { background: #f4faf0; }
+  .kba2-bv-head {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .kba2-bv-col.before .kba2-bv-head { color: #C0392B; }
+  .kba2-bv-col.after .kba2-bv-head { color: #27AE60; }
+  .kba2-bv-item {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; line-height: 1.55;
+    color: #444; padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    padding-left: 18px; position: relative;
+  }
+  .kba2-bv-item:last-child { border-bottom: none; }
+  .kba2-bv-col.before .kba2-bv-item::before { content: "✕"; position: absolute; left: 0; color: #C0392B; font-size: 10px; top: 8px; }
+  .kba2-bv-col.after .kba2-bv-item::before { content: "✓"; position: absolute; left: 0; color: #27AE60; font-size: 11px; top: 7px; }
+
+  /* ── 5. EROTTAUTUMINEN ── */
+  .kba2-diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 20px 0;
+  }
+  .kba2-diff-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 20px 16px;
+    text-align: center;
+  }
+  .kba2-diff-icon {
+    font-size: 28px; margin-bottom: 10px;
+  }
+  .kba2-diff-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: #1a1a1a; margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .kba2-diff-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; line-height: 1.55;
+    color: #555;
+  }
+
+  /* ── 6. VALMENTAJA ── */
+  .kba2-coach {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 28px 28px;
+    margin: 20px 0;
+  }
+  .kba2-coach-name {
+    font-size: 22px; font-weight: 700;
+    color: #1a1a1a; margin-bottom: 4px;
+  }
+  .kba2-coach-role {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; color: #888;
+    margin-bottom: 16px;
+  }
+  .kba2-coach-stats {
+    display: flex; gap: 20px;
+    flex-wrap: wrap; margin-bottom: 16px;
+  }
+  .kba2-stat { text-align: center; }
+  .kba2-stat-num {
+    font-size: 26px; font-weight: 700;
+    color: #185FA5; line-height: 1;
+  }
+  .kba2-stat-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #888;
+  }
+  .kba2-coach-creds {
+    list-style: none; padding: 0;
+  }
+  .kba2-coach-creds li {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; color: #555;
+    padding: 4px 0 4px 16px; position: relative;
+  }
+  .kba2-coach-creds li::before {
+    content: "·"; position: absolute;
+    left: 0; color: #185FA5; font-size: 18px; top: 0;
+  }
+
+  /* ── 7. LOPPU-CTA ── */
+  .kba2-cta-box {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 36px 32px;
+    text-align: center;
+    margin: 36px 0 48px;
+  }
+  .kba2-cta-box h3 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700; color: #fff;
+    line-height: 1.3; margin-bottom: 12px;
+  }
+  .kba2-cta-box p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px; color: #aaa;
+    margin-bottom: 24px; line-height: 1.6;
+  }
+  .kba2-cta-btn {
+    display: inline-block;
+    background: #185FA5; color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: .04em;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+  }
+  .kba2-cta-sub {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #666;
+    margin-top: 14px;
+  }
+
+  /* Mobile */
+  @media(max-width: 560px) {
+    .kba2-who-grid,
+    .kba2-phases,
+    .kba2-invest,
+    .kba2-diff-grid { grid-template-columns: 1fr; }
+    .kba2-quotes { grid-template-columns: 1fr; }
+    .kba2-bv { grid-template-columns: 1fr; }
+    .kba2-bv-col.before { border-right: none; border-bottom: 1px solid #e0e0e0; }
+    .kba2-coach-stats { gap: 16px; }
+  }
+</style>
+
+<div class="kba2">
+
+  <!-- ══════════════════════════════════════════
+       1. KENELLE TÄMÄ ON
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Kenelle valmennus on suunnattu</div>
+  <h2 class="kba2-h2">Tunnistuuko tilanteesi?</h2>
+
+  <div class="kba2-who-grid">
+    <div class="kba2-who-card">
+      <div class="kba2-who-role">Toimitusjohtaja</div>
+      <div class="kba2-who-pain">Tekoälyä käytetään organisaatiossa — mutta johto ei johda sen vaikutusta liiketoimintaan. IT vie hankkeita eteenpäin, hallitus on sivussa.</div>
+    </div>
+    <div class="kba2-who-card">
+      <div class="kba2-who-role">Hallituksen jäsen</div>
+      <div class="kba2-who-pain">EU:n AI Act tuo juridisia vastuita suoraan hallitustasolle. Tietämättömyys ei ole puolustus — mutta hallitus ei tiedä mitä pitäisi kysyä johdolta.</div>
+    </div>
+    <div class="kba2-who-card">
+      <div class="kba2-who-role">HR-johtaja</div>
+      <div class="kba2-who-pain">Henkilöstö käyttää tekoälyä ilman pelisääntöjä. Muutosvastarinta kasvaa hiljaa. Kukaan ei johda inhimillistä muutosta proaktiivisesti.</div>
+    </div>
+  </div>
+
+  <p class="kba2-p">Et tarvitse teknistä taustaa. Tarvitset selkeän kuvan siitä, <strong>mitä tekoäly tarkoittaa juuri sinun vastuualueellasi</strong> — ja rohkeuden tehdä päätöksiä sen perusteella.</p>
+
+
+  <!-- ══════════════════════════════════════════
+       2. REFERENSSIT
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Mitä asiakkaat sanovat</div>
+  <h2 class="kba2-h2">Johtajia, jotka ovat jo ottaneet askeleen</h2>
+
+  <div class="kba2-quotes">
+    <div class="kba2-quote">
+      <div class="kba2-quote-text">"Mertsi on loistava valmentaja. Hänellä on tapa haastaa sinut löytämään vastauksesi itse."</div>
+      <div class="kba2-quote-name">Johanna Starck</div>
+      <div class="kba2-quote-title">CEO, PostNord</div>
+    </div>
+    <div class="kba2-quote">
+      <div class="kba2-quote-text">"Tein valmennusohjelman Mertsin kanssa — yksi parhaista koulutuskokemuksista, joita minulla on ollut urani aikana."</div>
+      <div class="kba2-quote-name">Tommi Hänninen</div>
+      <div class="kba2-quote-title">Co-Founder &amp; CEO, Joisto Group</div>
+    </div>
+    <div class="kba2-quote">
+      <div class="kba2-quote-text">"Mertsi on loistava yritysvalmentaja. Hänen vahvuuksiaan on laaja kokemus eri toimialoilta sekä vahva halu kehittää ihmisiä."</div>
+      <div class="kba2-quote-name">Antti Niitynpää</div>
+      <div class="kba2-quote-title">President and CEO, Luotea Oyj</div>
+    </div>
+    <div class="kba2-quote">
+      <div class="kba2-quote-text">"Kymmenen vuoden aikana olemme käyneet Mertsin kanssa henkilökohtaisia ja ryhmävalmennuksia. Palautteet ovat olleet hyviä."</div>
+      <div class="kba2-quote-name">Johannes Kangas</div>
+      <div class="kba2-quote-title">ex-CEO, Forenom Oy</div>
+    </div>
+  </div>
+
+  <div class="kba2-logos">
+    <span class="kba2-logo-pill">PostNord</span>
+    <span class="kba2-logo-pill">Lassila &amp; Tikanoja</span>
+    <span class="kba2-logo-pill">Forenom</span>
+    <span class="kba2-logo-pill">Joisto Group</span>
+    <span class="kba2-logo-pill">Barona</span>
+    <span class="kba2-logo-pill">ISS</span>
+    <span class="kba2-logo-pill">Betolar</span>
+    <span class="kba2-logo-pill">Wunderdog</span>
+    <span class="kba2-logo-pill">SOK</span>
+    <span class="kba2-logo-pill">Gartner</span>
+  </div>
+
+  <div class="kba2-bigquote">
+    &ldquo;Olisinpa tiennyt tämän jo aiemmin.&rdquo;<br>
+    <span style="font-size:14px;font-style:normal;color:#888;">— Lähes jokainen valmennuksen jälkeen</span>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       3. OHJELMA
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Ohjelman sisältö</div>
+  <h2 class="kba2-h2">Kaksi osa-aluetta — yksi kokonaisuus</h2>
+  <p class="kba2-p">Johtaja.AI-ohjelma yhdistää tekoälyn strategisen johtamisen ja AI-kyberturvallisuuden. Räätälöimme sisällön organisaatiosi tarpeisiin.</p>
+
+  <div class="kba2-phases">
+    <div class="kba2-phase">
+      <div class="kba2-phase-num">Osa 1</div>
+      <div class="kba2-phase-title">Tekoälyn strateginen johtaminen</div>
+      <ul class="kba2-phase-items">
+        <li>AI linkitetään liiketoimintastrategiaan — ei IT-projektina</li>
+        <li>Hallituksen, johtoryhmän ja HR:n kyvykkyyden kehittäminen</li>
+        <li>Eettinen tekoäly ja governance</li>
+        <li>90 päivän toimintasuunnitelma hallitukselle</li>
+      </ul>
+    </div>
+    <div class="kba2-phase">
+      <div class="kba2-phase-num">Osa 2</div>
+      <div class="kba2-phase-title">AI-kyberturvallisuus &amp; compliance</div>
+      <ul class="kba2-phase-items">
+        <li>EU AI Act: neljä riskiluokkaa ja johdon vastuut</li>
+        <li>Datapolitiikka: mitä tekoälylle saa syöttää — ja mitä ei</li>
+        <li>SaaS vs. suljettu järjestelmä — milloin kumpikin</li>
+        <li>GDPR + AI Act -compliance hallitustasolle</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kba2-label" style="margin-top:28px">Toteutus</div>
+  <p class="kba2-p" style="margin-bottom:8px">Ohjelma toteutetaan yhteensä noin 16–17 tunnin prosessina, joka sisältää:</p>
+  <div class="kba2-invest">
+    <div class="kba2-invest-card">
+      <div class="kba2-invest-item">Kick-off</div>
+      <div class="kba2-invest-price">½ pv</div>
+      <div class="kba2-invest-desc">Lähivalmennus — tietoisuus, tilannekuva, riskit</div>
+    </div>
+    <div class="kba2-invest-card featured">
+      <div class="kba2-invest-item">Prosessi</div>
+      <div class="kba2-invest-price">5 × 1h</div>
+      <div class="kba2-invest-desc">Etäsessiot — kartoitus, strategia, datapolitiikka</div>
+    </div>
+    <div class="kba2-invest-card">
+      <div class="kba2-invest-item">Päätös</div>
+      <div class="kba2-invest-price">½ pv</div>
+      <div class="kba2-invest-desc">Lähivalmennus — toimintasuunnitelma ja hallitusesitys</div>
+    </div>
+  </div>
+
+  <div style="background:#f8f8f8;border:1px solid #e0e0e0;border-radius:8px;padding:20px 22px;margin:16px 0;">
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#185FA5;margin-bottom:8px;">Investointi</div>
+    <div style="font-size:28px;font-weight:700;color:#1a1a1a;line-height:1;margin-bottom:6px;">14 947 € <span style="font-size:14px;font-weight:400;color:#888;">alv 0%</span></div>
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#555;line-height:1.6;">Sisältää kaikki valmennusmateriaalit, TKVAL-metodi™ ja AI-promptit. Maksuehto 14 pv netto.<br>
+    <em style="color:#888;">Vertailuksi: yksittäinen strategia-workshop McKinsey / Gartner / Forrester maksaa Suomessa tyypillisesti 15 000–40 000 €.</em></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       4. ENNEN vs. JÄLKEEN
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Muutos käytännössä</div>
+  <h2 class="kba2-h2">6 kuukautta muuttaa kuvan täysin</h2>
+
+  <div class="kba2-bv">
+    <div class="kba2-bv-col before">
+      <div class="kba2-bv-head">Ennen</div>
+      <div class="kba2-bv-item">"Pitäisi tehdä jotain tekoälyn kanssa" — epämääräinen tunnelma</div>
+      <div class="kba2-bv-item">IT-toimittaja esittelee hankkeita — hallitus ei osaa arvioida</div>
+      <div class="kba2-bv-item">SaaS-palveluja käytetään ilman datapolitiikkaa</div>
+      <div class="kba2-bv-item">HR ei tiedä miten johtaa muutosta ihmisiin</div>
+      <div class="kba2-bv-item">Investoinnit hajautuvat kokeiluihin ilman strategiaa</div>
+    </div>
+    <div class="kba2-bv-col after">
+      <div class="kba2-bv-head">6 kk jälkeen</div>
+      <div class="kba2-bv-item">Hallitus arvioi tekoälyhankkeet itsenäisesti, liiketoimintaperustein</div>
+      <div class="kba2-bv-item">Johtoryhmällä selkeä kuva: mitä automatisoidaan, mitä ei</div>
+      <div class="kba2-bv-item">Datapolitiikka kunnossa — henkilöstö tietää pelisäännöt</div>
+      <div class="kba2-bv-item">HR johtaa muutosta proaktiivisesti, ei reaktiivisesti</div>
+      <div class="kba2-bv-item">Investoinnit kohdistuvat oikein — ei hype-hankkeisiin</div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       5. EROTTAUTUMISTEKIJÄT
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Miksi Johtaja.AI</div>
+  <h2 class="kba2-h2">Kolme asiaa, joita et löydä muualta</h2>
+
+  <div class="kba2-diff-grid">
+    <div class="kba2-diff-card">
+      <div class="kba2-diff-icon">🛡️</div>
+      <div class="kba2-diff-title">Turvallisuus + strategia samassa paketissa</div>
+      <div class="kba2-diff-text">Perinteiset konsultit ovat joko strategeja tai kyberturvallisuuden osaajia. Tämä yhdistää molemmat — koska EU AI Act vaatii molempia.</div>
+    </div>
+    <div class="kba2-diff-card">
+      <div class="kba2-diff-icon">🎯</div>
+      <div class="kba2-diff-title">Johdon kieli — ei IT-jargonia</div>
+      <div class="kba2-diff-text">Puhumme arvo-, riski- ja liiketoimintakielellä. Tavoite ei ole opettaa teknologiaa, vaan auttaa johtoa tekemään parempia päätöksiä.</div>
+    </div>
+    <div class="kba2-diff-card">
+      <div class="kba2-diff-icon">🌍</div>
+      <div class="kba2-diff-title">Reaaliaikainen kriisiresilienssi</div>
+      <div class="kba2-diff-text">Odessassa toimiva valmentaja tietää käytännössä, mitä kyberturvallisuus ja digitaalinen resilienssi tarkoittavat paineen alla.</div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       6. VALMENTAJA
+  ══════════════════════════════════════════ -->
+  <hr class="kba2-rule">
+  <div class="kba2-label">Valmentaja</div>
+
+  <div class="kba2-coach">
+    <div class="kba2-coach-name">Mertsi Lanki</div>
+    <div class="kba2-coach-role">Senior Executive Coach · Rokmind Oy · MBA, viennin johtaminen</div>
+
+    <div class="kba2-coach-stats">
+      <div class="kba2-stat">
+        <div class="kba2-stat-num">500+</div>
+        <div class="kba2-stat-label">organisaatiota</div>
+      </div>
+      <div class="kba2-stat">
+        <div class="kba2-stat-num">20+</div>
+        <div class="kba2-stat-label">vuotta kokemusta</div>
+      </div>
+      <div class="kba2-stat">
+        <div class="kba2-stat-num">6</div>
+        <div class="kba2-stat-label">perustettua yritystä</div>
+      </div>
+      <div class="kba2-stat">
+        <div class="kba2-stat-num">4</div>
+        <div class="kba2-stat-label">maata</div>
+      </div>
+    </div>
+
+    <ul class="kba2-coach-creds">
+      <li>Turvallisuuskriittisten organisaatioiden konsultti: Puolustusvoimat, pankkien pääkonttorit, ulkomaiset lähetystöt</li>
+      <li>Referenssejä: PostNord, Lassila &amp; Tikanoja, Forenom, Barona, ISS, SOK, Gartner</li>
+      <li>Asemapaikka Odessa, Ukraina — reaaliaikainen näköalapaikka kyberturvallisuuteen ja digitaaliseen resilienssiin</li>
+    </ul>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       7. LOPPU-CTA
+  ══════════════════════════════════════════ -->
+  <div class="kba2-cta-box">
+    <h3>Selvitetään yhdessä,<br>sopiiko tämä organisaatiollesi</h3>
+    <p>30 minuutin strategiapuhelu. Tutustumme toisiimme, kartoitan tilanteesi ja kerron konkreettisesti miten voin auttaa. Ei sitoumuksia.</p>
+    <a class="kba2-cta-btn" href="https://calendar.app.google/Kx4axzwGk1AyJjUo9" target="_blank">Varaa strategiapuhelu →</a>
+    <div class="kba2-cta-sub">mertsi@rokmind.fi &nbsp;·&nbsp; linkedin.com/in/mertsilanki</div>
+  </div>
+
+</div><!-- /kba2 -->

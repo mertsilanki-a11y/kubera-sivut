@@ -1,0 +1,250 @@
+<!-- ============================================================
+     JOHTAJA.AI — HR-johtajille
+     Kajabi Custom Code -lohko
+     URL-ehdotus: kubera.fi/johtaja-ai-hr
+     ============================================================ -->
+<style>
+.kai * { box-sizing: border-box; margin: 0; padding: 0; }
+.kai { max-width: 720px; margin: 0 auto; font-family: 'Georgia','Times New Roman',serif; color: #1a1a1a; padding: 0 20px 60px; }
+.kai-breadcrumb { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; color:#888; margin-bottom:28px; }
+.kai-breadcrumb a { color:#185FA5; text-decoration:none; }
+.kai-kicker { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#185FA5; margin-bottom:14px; }
+.kai-headline { font-size:clamp(26px,4vw,38px); font-weight:700; line-height:1.15; color:#1a1a1a; margin-bottom:18px; }
+.kai-deck { font-style:italic; font-size:16px; line-height:1.7; color:#444; border-left:4px solid #185FA5; padding-left:16px; margin-bottom:20px; }
+.kai-meta { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#999; border-top:1px solid #ddd; border-bottom:1px solid #ddd; padding:8px 0; margin-bottom:32px; }
+.kai-label { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#185FA5; margin:48px 0 8px; }
+.kai-h2 { font-size:clamp(20px,3vw,26px); font-weight:700; line-height:1.25; color:#1a1a1a; margin-bottom:16px; }
+.kai-p { font-size:16px; line-height:1.85; color:#1a1a1a; margin-bottom:14px; }
+.kai-rule { border:none; border-top:1px solid #e0e0e0; margin:48px 0 0; }
+.kai-pain { background:#FDF6F6; border:1px solid #F0CCCC; border-left:4px solid #C0392B; border-radius:6px; padding:18px 20px; margin:14px 0; }
+.kai-pain-h { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; font-weight:700; color:#A32D2D; margin-bottom:8px; }
+.kai-pain-b { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:1.65; color:#444; }
+.kai-benefits { list-style:none; padding:0; margin:16px 0; }
+.kai-benefits li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:15px; line-height:1.6; color:#1a1a1a; padding:10px 0 10px 24px; position:relative; border-bottom:1px solid #eee; }
+.kai-benefits li:last-child { border-bottom:none; }
+.kai-benefits li::before { content:"✓"; position:absolute; left:0; color:#27AE60; font-weight:700; font-size:15px; }
+.kai-human-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:20px 0; }
+.kai-hcard { background:#EEF6E4; border:1px solid #C5E0A0; border-radius:6px; padding:16px; }
+.kai-hcard-h { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; color:#3B6D11; margin-bottom:6px; }
+.kai-hcard-b { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#555; }
+.kai-phases { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+.kai-phase { background:#EAF2FB; border:1px solid #C5DCF5; border-radius:8px; padding:20px 18px; }
+.kai-phase-num { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; color:#185FA5; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
+.kai-phase-title { font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:10px; line-height:1.25; }
+.kai-phase-items { list-style:none; padding:0; }
+.kai-phase-items li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#444; padding:4px 0 4px 16px; border-bottom:1px solid #d0e6f7; position:relative; }
+.kai-phase-items li:last-child { border-bottom:none; }
+.kai-phase-items li::before { content:"→"; position:absolute; left:0; color:#185FA5; }
+.kai-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+.kai-quote { background:#f8f8f8; border-left:3px solid #185FA5; border-radius:0 6px 6px 0; padding:16px 18px; }
+.kai-quote-text { font-style:italic; font-size:14px; line-height:1.65; color:#333; margin-bottom:10px; }
+.kai-quote-name { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; color:#1a1a1a; }
+.kai-quote-title { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#888; }
+.kai-bv { display:grid; grid-template-columns:1fr 1fr; margin:20px 0; border:1px solid #e0e0e0; border-radius:8px; overflow:hidden; }
+.kai-bv-col { padding:20px 18px; }
+.kai-bv-col.before { background:#fdf6f6; border-right:1px solid #e0e0e0; }
+.kai-bv-col.after  { background:#f4faf0; }
+.kai-bv-head { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+.kai-bv-col.before .kai-bv-head { color:#C0392B; }
+.kai-bv-col.after  .kai-bv-head { color:#27AE60; }
+.kai-bv-item { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#444; padding:6px 0 6px 18px; border-bottom:1px solid rgba(0,0,0,.07); position:relative; }
+.kai-bv-item:last-child { border-bottom:none; }
+.kai-bv-col.before .kai-bv-item::before { content:"✕"; position:absolute; left:0; color:#C0392B; font-size:10px; top:8px; }
+.kai-bv-col.after  .kai-bv-item::before { content:"✓"; position:absolute; left:0; color:#27AE60; font-size:11px; top:7px; }
+.kai-coach { background:#f8f8f8; border:1px solid #e0e0e0; border-radius:8px; padding:28px; margin:20px 0; }
+.kai-coach-name { font-size:22px; font-weight:700; color:#1a1a1a; margin-bottom:4px; }
+.kai-coach-role { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; color:#888; margin-bottom:16px; }
+.kai-coach-stats { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px; }
+.kai-stat { text-align:center; }
+.kai-stat-num { font-size:26px; font-weight:700; color:#185FA5; line-height:1; }
+.kai-stat-label { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#888; }
+.kai-coach-creds { list-style:none; padding:0; }
+.kai-coach-creds li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; color:#555; padding:4px 0 4px 16px; position:relative; }
+.kai-coach-creds li::before { content:"·"; position:absolute; left:0; color:#185FA5; font-size:18px; top:0; }
+.kai-cta-box { background:#1a1a1a; border-radius:8px; padding:36px 32px; text-align:center; margin:36px 0 12px; }
+.kai-cta-box h3 { font-size:clamp(20px,3vw,26px); font-weight:700; color:#fff; line-height:1.3; margin-bottom:12px; }
+.kai-cta-box p { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; color:#aaa; margin-bottom:24px; line-height:1.6; }
+.kai-cta-btn { display:inline-block; background:#185FA5; color:#fff; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:.04em; text-decoration:none; padding:14px 32px; border-radius:4px; }
+.kai-cta-sub { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#666; margin-top:14px; }
+.kai-pullquote { border-top:2px solid #1a1a1a; border-bottom:1px solid #ddd; padding:20px 0; margin:28px 0; font-style:italic; font-size:18px; line-height:1.5; color:#1a1a1a; }
+@media(max-width:560px){
+  .kai-phases,.kai-quotes,.kai-human-grid { grid-template-columns:1fr; }
+  .kai-bv { grid-template-columns:1fr; }
+  .kai-bv-col.before { border-right:none; border-bottom:1px solid #e0e0e0; }
+}
+</style>
+
+<div class="kai">
+
+  <div class="kai-breadcrumb">
+    <a href="https://www.kubera.fi/johtaja-ai">← Johtaja.AI</a> &nbsp;/&nbsp; HR-johtajille
+  </div>
+
+  <div class="kai-kicker">Johtaja.AI · HR-johtajille</div>
+  <h1 class="kai-headline">Tekoäly muuttaa työn.<br>HR päättää, miten se tehdään ihmisille.</h1>
+  <div class="kai-deck">
+    Tekoälyn suurin este ei ole teknologia — se on ihminen. Muutosvastarinta, pelko ja epävarmuus pysäyttävät parhaankin AI-strategian. Johtaja.AI antaa HR-johtajalle työkalut johtaa tämä muutos proaktiivisesti — ei reaktiivisesti.
+  </div>
+  <div class="kai-meta">Johtaja.AI-valmennus · Mertsi Lanki · 14 947 € alv 0%</div>
+
+  <!-- Kipupisteet -->
+  <hr class="kai-rule">
+  <div class="kai-label">Tuttu tilanne?</div>
+  <h2 class="kai-h2">HR tekoälymurroksessa — kolme kipupistettä</h2>
+
+  <div class="kai-pain">
+    <div class="kai-pain-h">Henkilöstö käyttää tekoälyä — mutta kukaan ei johda sitä</div>
+    <div class="kai-pain-b">Shadow AI on jo organisaatiossa. Ihmiset löytävät omia ratkaisujaan. Yhteisiä pelisääntöjä ei ole, datapolitiikka puuttuu.</div>
+  </div>
+  <div class="kai-pain">
+    <div class="kai-pain-h">Muutosvastarinta kasvaa hiljaa — ja johto odottaa HR:ltä ratkaisua</div>
+    <div class="kai-pain-b">Pelko omasta työpaikasta, epävarmuus uusista rooleista ja luottamuksen puute voivat pysäyttää koko AI-strategian etenemisen.</div>
+  </div>
+  <div class="kai-pain">
+    <div class="kai-pain-h">HR:llä ei ole selkeää roolia tekoälystrategian rakentamisessa</div>
+    <div class="kai-pain-b">Strategia tehdään IT:ssä tai johtoryhmässä — HR kutsutaan mukaan vasta kun muutos aiheuttaa ongelmia. Tämä on väärä järjestys.</div>
+  </div>
+
+  <!-- Inhimillinen muutos -->
+  <hr class="kai-rule">
+  <div class="kai-label">Tekoälymurroksessa ihminen ratkaisee</div>
+  <h2 class="kai-h2">Neljä inhimillistä kokonaisuutta, jotka HR:n on hallittava</h2>
+  <p class="kai-p">Suurin este tuottavuusloikkien saavuttamiselle ei ole ohjelmistojen puute, vaan organisaation kyky omaksua uusia työtapoja.</p>
+
+  <div class="kai-human-grid">
+    <div class="kai-hcard">
+      <div class="kai-hcard-h">Osaaminen &amp; pätevöittäminen</div>
+      <div class="kai-hcard-b">Järjestelmällistä pätevöittämistä kaikilla tasoilla — johdosta etulinjan tiimeihin. Pistemäiset kurssit eivät riitä.</div>
+    </div>
+    <div class="kai-hcard">
+      <div class="kai-hcard-h">Työn uudelleensuunnittelu</div>
+      <div class="kai-hcard-b">Tekoälyn liimaaminen vanhojen prosessien päälle automatisoi vanhaa tehottomuutta. Roolit on rakennettava uudelleen.</div>
+    </div>
+    <div class="kai-hcard">
+      <div class="kai-hcard-h">Muutoksen johtaminen</div>
+      <div class="kai-hcard-b">Psykologisesti turvallinen työkulttuuri, jossa tekoäly esitellään parhaana assistenttina — ei korvaajana.</div>
+    </div>
+    <div class="kai-hcard">
+      <div class="kai-hcard-h">Human-in-the-loop</div>
+      <div class="kai-hcard-b">Selkeät hyväksymiskerrokset ja eskalaatiopolut kriittisille AI-päätöksille — rekrytointi, luototus, asiakasviestintä.</div>
+    </div>
+  </div>
+
+  <div class="kai-pullquote">
+    &ldquo;Paraskaan algoritmi ei pelasta organisaatiota, jos ihmiset eivät osaa tai halua sitä käyttää.&rdquo;
+  </div>
+
+  <!-- Mitä saat -->
+  <hr class="kai-rule">
+  <div class="kai-label">Mitä saat valmennuksesta</div>
+  <h2 class="kai-h2">HR:n konkreettiset tulokset</h2>
+  <ul class="kai-benefits">
+    <li>Pätevöittämissuunnitelma: miten kehität AI-osaamista kaikilla organisaation tasoilla</li>
+    <li>Muutosjohtamisen malli tekoälyaikaan — proaktiivinen, ei reaktiivinen</li>
+    <li>Datapolitiikka ja pelisäännöt henkilöstölle — selkeinä, ymmärrettävinä</li>
+    <li>Roolien uudelleensuunnittelun viitekehys: mitä automatisoidaan, mitä ei</li>
+    <li>Human-in-the-loop -malli: missä ihminen on aina välissä, missä ei tarvitse olla</li>
+    <li>Kyky vaikuttaa tekoälystrategiaan johdon pöydällä — ei vain toteuttaa sitä</li>
+  </ul>
+
+  <!-- Ohjelma -->
+  <hr class="kai-rule">
+  <div class="kai-label">Ohjelman sisältö</div>
+  <h2 class="kai-h2">Strategia + ihminen yhdessä paketissa</h2>
+
+  <div class="kai-phases">
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 1</div>
+      <div class="kai-phase-title">Tekoälyn strateginen johtaminen</div>
+      <ul class="kai-phase-items">
+        <li>HR:n rooli AI-strategiassa — osa ydintä, ei jalkauttaja</li>
+        <li>Osaamisen kehittämisen suunnittelu organisaatiotasolla</li>
+        <li>Työn uudelleensuunnittelu ja roolien muutos</li>
+        <li>Muutosjohtamisen malli: pelko, vastarinta, luottamus</li>
+      </ul>
+    </div>
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 2</div>
+      <div class="kai-phase-title">AI-kyberturvallisuus &amp; compliance</div>
+      <ul class="kai-phase-items">
+        <li>Shadow AI: henkilöstön käyttäytyminen ja riskit</li>
+        <li>Datapolitiikka: miten viestit siitä henkilöstölle</li>
+        <li>EU AI Act: HR-prosessien riskiluokitus</li>
+        <li>Rekrytointi- ja HR-AI: vaatimustenmukaisuus</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:#f8f8f8;border:1px solid #e0e0e0;border-radius:8px;padding:20px 22px;margin:16px 0;">
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#185FA5;margin-bottom:8px;">Investointi</div>
+    <div style="font-size:28px;font-weight:700;color:#1a1a1a;line-height:1;margin-bottom:6px;">14 947 € <span style="font-size:14px;font-weight:400;color:#888;">alv 0%</span></div>
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#555;line-height:1.6;">Sisältää ½ pv kick-off, 5 × 1 h etäsessiot, ½ pv päätösworkshop, kaikki materiaalit ja TKVAL-metodi™. Maksuehto 14 pv netto.</div>
+  </div>
+
+  <!-- Ennen/jälkeen -->
+  <hr class="kai-rule">
+  <div class="kai-label">Muutos käytännössä</div>
+  <h2 class="kai-h2">HR:n arki ennen ja jälkeen</h2>
+  <div class="kai-bv">
+    <div class="kai-bv-col before">
+      <div class="kai-bv-head">Ennen</div>
+      <div class="kai-bv-item">Tekoäly otetaan käyttöön — HR kutsutaan mukaan kun ongelmat alkavat</div>
+      <div class="kai-bv-item">Henkilöstö käyttää omia AI-työkalujaan ilman pelisääntöjä</div>
+      <div class="kai-bv-item">Muutosvastarinta yllättää — kukaan ei johtanut muutosta etukäteen</div>
+      <div class="kai-bv-item">Roolit epäselvät: kuka tekee mitä kun AI hoitaa osan tehtävistä</div>
+    </div>
+    <div class="kai-bv-col after">
+      <div class="kai-bv-after">
+      <div class="kai-bv-head">Jälkeen</div>
+      <div class="kai-bv-item">HR on mukana AI-strategiassa alusta — ei jälkikäteen</div>
+      <div class="kai-bv-item">Datapolitiikka viestittynä selkeästi koko henkilöstölle</div>
+      <div class="kai-bv-item">Muutosjohtamisen malli valmiina ennen käyttöönottoa</div>
+      <div class="kai-bv-item">Roolit uudelleensuunniteltu: ihminen tekee korkeamman jalostusasteen työtä</div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Referenssit -->
+  <hr class="kai-rule">
+  <div class="kai-label">Referenssit</div>
+  <h2 class="kai-h2">Mitä johtajat sanovat</h2>
+  <div class="kai-quotes">
+    <div class="kai-quote">
+      <div class="kai-quote-text">"Mertsi on loistava valmentaja. Hänellä on tapa haastaa sinut löytämään vastauksesi itse."</div>
+      <div class="kai-quote-name">Johanna Starck</div>
+      <div class="kai-quote-title">CEO, PostNord</div>
+    </div>
+    <div class="kai-quote">
+      <div class="kai-quote-text">"Kymmenen vuoden aikana olemme käyneet Mertsin kanssa henkilökohtaisia ja ryhmävalmennuksia. Palautteet ovat olleet hyviä."</div>
+      <div class="kai-quote-name">Johannes Kangas</div>
+      <div class="kai-quote-title">ex-CEO, Forenom Oy</div>
+    </div>
+  </div>
+
+  <!-- Valmentaja -->
+  <hr class="kai-rule">
+  <div class="kai-label">Valmentaja</div>
+  <div class="kai-coach">
+    <div class="kai-coach-name">Mertsi Lanki</div>
+    <div class="kai-coach-role">Senior Executive Coach · Rokmind Oy · MBA, viennin johtaminen</div>
+    <div class="kai-coach-stats">
+      <div class="kai-stat"><div class="kai-stat-num">500+</div><div class="kai-stat-label">organisaatiota</div></div>
+      <div class="kai-stat"><div class="kai-stat-num">20+</div><div class="kai-stat-label">vuotta kokemusta</div></div>
+      <div class="kai-stat"><div class="kai-stat-num">6</div><div class="kai-stat-label">perustettua yritystä</div></div>
+    </div>
+    <ul class="kai-coach-creds">
+      <li>Yli 20 vuotta liikkeenjohdon valmennusta — ihminen ja muutos on erikoisala</li>
+      <li>500+ organisaation sparrauskokemus Suomessa ja kansainvälisesti</li>
+      <li>Asemapaikka Odessa, Ukraina — tietää käytännössä mitä organisaatioresilienssi tarkoittaa paineen alla</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="kai-cta-box">
+    <h3>Selvitetään 30 minuutissa,<br>miten HR johtaa tekoälymurrosta teillä</h3>
+    <p>Kartoitan tilanteesi ja kerron konkreettisesti miten voin auttaa. Ei sitoumuksia.</p>
+    <a class="kai-cta-btn" href="https://calendar.app.google/Kx4axzwGk1AyJjUo9" target="_blank">Varaa strategiapuhelu →</a>
+    <div class="kai-cta-sub">mertsi@rokmind.fi &nbsp;·&nbsp; linkedin.com/in/mertsilanki</div>
+  </div>
+
+</div>

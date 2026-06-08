@@ -1,0 +1,247 @@
+<!-- ============================================================
+     JOHTAJA.AI — Hallituksen jäsenille
+     Kajabi Custom Code -lohko
+     URL-ehdotus: kubera.fi/johtaja-ai-hallitus
+     ============================================================ -->
+<style>
+.kai * { box-sizing: border-box; margin: 0; padding: 0; }
+.kai { max-width: 720px; margin: 0 auto; font-family: 'Georgia','Times New Roman',serif; color: #1a1a1a; padding: 0 20px 60px; }
+.kai-breadcrumb { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; color:#888; margin-bottom:28px; }
+.kai-breadcrumb a { color:#185FA5; text-decoration:none; }
+.kai-kicker { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#185FA5; margin-bottom:14px; }
+.kai-headline { font-size:clamp(26px,4vw,38px); font-weight:700; line-height:1.15; color:#1a1a1a; margin-bottom:18px; }
+.kai-deck { font-style:italic; font-size:16px; line-height:1.7; color:#444; border-left:4px solid #185FA5; padding-left:16px; margin-bottom:20px; }
+.kai-meta { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#999; border-top:1px solid #ddd; border-bottom:1px solid #ddd; padding:8px 0; margin-bottom:32px; }
+.kai-label { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#185FA5; margin:48px 0 8px; }
+.kai-h2 { font-size:clamp(20px,3vw,26px); font-weight:700; line-height:1.25; color:#1a1a1a; margin-bottom:16px; }
+.kai-p { font-size:16px; line-height:1.85; color:#1a1a1a; margin-bottom:14px; }
+.kai-rule { border:none; border-top:1px solid #e0e0e0; margin:48px 0 0; }
+.kai-pain { background:#FDF6F6; border:1px solid #F0CCCC; border-left:4px solid #C0392B; border-radius:6px; padding:18px 20px; margin:20px 0; }
+.kai-pain-h { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; font-weight:700; color:#A32D2D; margin-bottom:8px; }
+.kai-pain-b { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; line-height:1.65; color:#444; }
+.kai-benefits { list-style:none; padding:0; margin:16px 0; }
+.kai-benefits li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:15px; line-height:1.6; color:#1a1a1a; padding:10px 0 10px 24px; position:relative; border-bottom:1px solid #eee; }
+.kai-benefits li:last-child { border-bottom:none; }
+.kai-benefits li::before { content:"✓"; position:absolute; left:0; color:#27AE60; font-weight:700; font-size:15px; }
+.kai-law-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:20px 0; }
+.kai-law-card { background:#FFF9EC; border:1px solid #F5DFA0; border-radius:6px; padding:16px 18px; }
+.kai-law-h { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; color:#7D5A00; margin-bottom:6px; }
+.kai-law-b { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#555; }
+.kai-questions { list-style:none; padding:0; margin:16px 0; }
+.kai-questions li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:15px; font-style:italic; line-height:1.65; color:#1a1a1a; padding:10px 0 10px 24px; position:relative; border-bottom:1px solid #eee; }
+.kai-questions li:last-child { border-bottom:none; }
+.kai-questions li::before { content:"?"; position:absolute; left:0; color:#185FA5; font-weight:700; font-style:normal; }
+.kai-phases { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+.kai-phase { background:#EAF2FB; border:1px solid #C5DCF5; border-radius:8px; padding:20px 18px; }
+.kai-phase-num { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; color:#185FA5; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
+.kai-phase-title { font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:10px; line-height:1.25; }
+.kai-phase-items { list-style:none; padding:0; }
+.kai-phase-items li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#444; padding:4px 0 4px 16px; border-bottom:1px solid #d0e6f7; position:relative; }
+.kai-phase-items li:last-child { border-bottom:none; }
+.kai-phase-items li::before { content:"→"; position:absolute; left:0; color:#185FA5; }
+.kai-quotes { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:20px 0; }
+.kai-quote { background:#f8f8f8; border-left:3px solid #185FA5; border-radius:0 6px 6px 0; padding:16px 18px; }
+.kai-quote-text { font-style:italic; font-size:14px; line-height:1.65; color:#333; margin-bottom:10px; }
+.kai-quote-name { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:12px; font-weight:700; color:#1a1a1a; }
+.kai-quote-title { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#888; }
+.kai-bv { display:grid; grid-template-columns:1fr 1fr; margin:20px 0; border:1px solid #e0e0e0; border-radius:8px; overflow:hidden; }
+.kai-bv-col { padding:20px 18px; }
+.kai-bv-col.before { background:#fdf6f6; border-right:1px solid #e0e0e0; }
+.kai-bv-col.after  { background:#f4faf0; }
+.kai-bv-head { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+.kai-bv-col.before .kai-bv-head { color:#C0392B; }
+.kai-bv-col.after  .kai-bv-head { color:#27AE60; }
+.kai-bv-item { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; line-height:1.55; color:#444; padding:6px 0 6px 18px; border-bottom:1px solid rgba(0,0,0,.07); position:relative; }
+.kai-bv-item:last-child { border-bottom:none; }
+.kai-bv-col.before .kai-bv-item::before { content:"✕"; position:absolute; left:0; color:#C0392B; font-size:10px; top:8px; }
+.kai-bv-col.after  .kai-bv-item::before { content:"✓"; position:absolute; left:0; color:#27AE60; font-size:11px; top:7px; }
+.kai-coach { background:#f8f8f8; border:1px solid #e0e0e0; border-radius:8px; padding:28px; margin:20px 0; }
+.kai-coach-name { font-size:22px; font-weight:700; color:#1a1a1a; margin-bottom:4px; }
+.kai-coach-role { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; color:#888; margin-bottom:16px; }
+.kai-coach-stats { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:16px; }
+.kai-stat { text-align:center; }
+.kai-stat-num { font-size:26px; font-weight:700; color:#185FA5; line-height:1; }
+.kai-stat-label { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#888; }
+.kai-coach-creds { list-style:none; padding:0; }
+.kai-coach-creds li { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px; color:#555; padding:4px 0 4px 16px; position:relative; }
+.kai-coach-creds li::before { content:"·"; position:absolute; left:0; color:#185FA5; font-size:18px; top:0; }
+.kai-cta-box { background:#1a1a1a; border-radius:8px; padding:36px 32px; text-align:center; margin:36px 0 12px; }
+.kai-cta-box h3 { font-size:clamp(20px,3vw,26px); font-weight:700; color:#fff; line-height:1.3; margin-bottom:12px; }
+.kai-cta-box p { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; color:#aaa; margin-bottom:24px; line-height:1.6; }
+.kai-cta-btn { display:inline-block; background:#185FA5; color:#fff; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:.04em; text-decoration:none; padding:14px 32px; border-radius:4px; }
+.kai-cta-sub { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:11px; color:#666; margin-top:14px; }
+.kai-pullquote { border-top:2px solid #1a1a1a; border-bottom:1px solid #ddd; padding:20px 0; margin:28px 0; font-style:italic; font-size:18px; line-height:1.5; color:#1a1a1a; }
+@media(max-width:560px){
+  .kai-phases,.kai-quotes,.kai-law-grid { grid-template-columns:1fr; }
+  .kai-bv { grid-template-columns:1fr; }
+  .kai-bv-col.before { border-right:none; border-bottom:1px solid #e0e0e0; }
+}
+</style>
+
+<div class="kai">
+
+  <div class="kai-breadcrumb">
+    <a href="https://www.kubera.fi/johtaja-ai">← Johtaja.AI</a> &nbsp;/&nbsp; Hallituksen jäsenille
+  </div>
+
+  <div class="kai-kicker">Johtaja.AI · Hallituksen jäsenille</div>
+  <h1 class="kai-headline">Hallitus ei voi valvoa sitä,<br>mitä se ei ymmärrä.</h1>
+  <div class="kai-deck">
+    EU:n AI Act toi tekoälyn juridisesti hallituksen pöydälle. Nyt tarvitaan kykyä kysyä johdolta oikeat kysymykset — ja arvioida vastaukset itsenäisesti. Tämä valmennus varustaa hallituksen jäsenet juuri siihen.
+  </div>
+  <div class="kai-meta">Johtaja.AI-valmennus · Mertsi Lanki · 14 947 € alv 0%</div>
+
+  <!-- AI Act -vastuut -->
+  <hr class="kai-rule">
+  <div class="kai-label">EU AI Act 2026 — hallituksen vastuut</div>
+  <h2 class="kai-h2">Tämä koskee teitä suoraan</h2>
+  <p class="kai-p">EU:n tekoälyasetus ei ole IT-osaston asia. Se kohdistaa vastuita suoraan yrityksen johdolle — myös hallituksen jäsenille.</p>
+
+  <div class="kai-law-grid">
+    <div class="kai-law-card">
+      <div class="kai-law-h">Korkean riskin AI-järjestelmät</div>
+      <div class="kai-law-b">Jos yritys käyttää tai kehittää korkean riskin tekoälyä, vaatimustenmukaisuuden laiminlyönti voi johtaa massiivisiin liikevaihtoperusteisiin sakkoihin.</div>
+    </div>
+    <div class="kai-law-card">
+      <div class="kai-law-h">Hallituksen due diligence</div>
+      <div class="kai-law-b">Tietämättömyys ei ole puolustus. Hallitukselta edellytetään kykyä valvoa ja kysyä — myös tekoälyä koskevissa päätöksissä.</div>
+    </div>
+    <div class="kai-law-card">
+      <div class="kai-law-h">Vastuullinen AI</div>
+      <div class="kai-law-b">Algoritmin tekemistä virheistä vastuu palautuu aina yrityksen brändiin ja omistajiin — ei toimittajalle.</div>
+    </div>
+    <div class="kai-law-card">
+      <div class="kai-law-h">Inventaario &amp; dokumentaatio</div>
+      <div class="kai-law-b">Yrityksellä on oltava selkeä inventaario käytetyistä AI-järjestelmistä ja prosessi niiden vaatimustenmukaisuuden todentamiseksi.</div>
+    </div>
+  </div>
+
+  <!-- Kysymykset johdolle -->
+  <hr class="kai-rule">
+  <div class="kai-label">Osaatko jo kysyä nämä?</div>
+  <h2 class="kai-h2">Hallituksen kriittiset kysymykset johdolle</h2>
+  <p class="kai-p">Tehokas hallitustyö tekoälyaikana ei vaadi koodaustaitoa. Se vaatii kykyä esittää oikeat kysymykset — ja arvioida vastaukset.</p>
+  <ul class="kai-questions">
+    <li>Kuka organisaatiossa omistaa AI-riskin tänään?</li>
+    <li>Mitkä käyttämämme järjestelmät luokitellaan korkean riskin AI:ksi EU:n asetuksen mukaan?</li>
+    <li>Onko meillä datapolitiikka? Tietääkö henkilöstö, mitä tietoja ei saa syöttää kolmansien osapuolten järjestelmiin?</li>
+    <li>Miten tekoälyinvestointimme ROI mitataan — ja kuka sen mittaa?</li>
+    <li>Miten varmistamme, ettei algoritmi tee syrjiviä tai virheellisiä päätöksiä asiakkaidemme kustannuksella?</li>
+  </ul>
+
+  <div class="kai-pullquote">
+    &ldquo;Hallitus, joka ei ymmärrä tekoälyä, ei pysty valvomaan johtoa. Se on governance-riski omistajille.&rdquo;
+  </div>
+
+  <!-- Mitä saat -->
+  <hr class="kai-rule">
+  <div class="kai-label">Mitä saat valmennuksesta</div>
+  <h2 class="kai-h2">Hallituksen jäsenen AI-kyvykkyys käytännössä</h2>
+  <ul class="kai-benefits">
+    <li>Ymmärrät EU AI Actin neljä riskiluokkaa ja niiden vaikutukset hallitusvastuuriisi</li>
+    <li>Osaat haastaa johdon AI-ehdotuksia liiketoimintaperustein — ilman teknistä taustaa</li>
+    <li>Tiedät mitä kysyä, kun johto esittelee tekoälyhankkeita</li>
+    <li>Ymmärrät kyberturvallisuuden uudet uhat: deepfaket, Shadow AI, tietovuodot</li>
+    <li>Saat käyttöösi hallitusesityspohjan AI-tilannekuvaa varten</li>
+    <li>Pystyt arvioimaan yrityksen AI Governance -mallin riittävyyden</li>
+  </ul>
+
+  <!-- Ohjelma -->
+  <hr class="kai-rule">
+  <div class="kai-label">Ohjelman sisältö</div>
+  <h2 class="kai-h2">Räätälöity hallitustasolle</h2>
+
+  <div class="kai-phases">
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 1</div>
+      <div class="kai-phase-title">Tekoälyn strateginen johtaminen</div>
+      <ul class="kai-phase-items">
+        <li>AI:n vaikutus yrityksen arvoon ja kilpailukykyyn</li>
+        <li>AI Governance: hallituksen rooli ja vastuut</li>
+        <li>Oikeat kysymykset johdolle — käytännön harjoitukset</li>
+        <li>Hallitusesityspohja: AI-tilannekuva ja 90 pv roadmap</li>
+      </ul>
+    </div>
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 2</div>
+      <div class="kai-phase-title">AI-kyberturvallisuus &amp; compliance</div>
+      <ul class="kai-phase-items">
+        <li>EU AI Act hallituksen näkökulmasta</li>
+        <li>Korkean riskin järjestelmien tunnistaminen</li>
+        <li>GDPR + AI Act: mitä hallituksen on varmistettava</li>
+        <li>Kyberturvallisuuden uudet uhkat: deepfake, Shadow AI</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:#f8f8f8;border:1px solid #e0e0e0;border-radius:8px;padding:20px 22px;margin:16px 0;">
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#185FA5;margin-bottom:8px;">Investointi</div>
+    <div style="font-size:28px;font-weight:700;color:#1a1a1a;line-height:1;margin-bottom:6px;">14 947 € <span style="font-size:14px;font-weight:400;color:#888;">alv 0%</span></div>
+    <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;color:#555;line-height:1.6;">Sisältää ½ pv kick-off, 5 × 1 h etäsessiot, ½ pv päätösworkshop, kaikki materiaalit ja TKVAL-metodi™. Maksuehto 14 pv netto.</div>
+  </div>
+
+  <!-- Ennen/jälkeen -->
+  <hr class="kai-rule">
+  <div class="kai-label">Muutos käytännössä</div>
+  <h2 class="kai-h2">Hallitustyö ennen ja jälkeen</h2>
+  <div class="kai-bv">
+    <div class="kai-bv-col before">
+      <div class="kai-bv-head">Ennen</div>
+      <div class="kai-bv-item">Johto esittelee AI-hankkeet — hallitus hyväksyy ilman kriittistä arviota</div>
+      <div class="kai-bv-item">AI Act tuntuu kaukaiselta, vastuu epäselvä</div>
+      <div class="kai-bv-item">Ei tietoa yrityksen AI-riskeistä tai datapolitiikasta</div>
+      <div class="kai-bv-item">Ei osata arvioida, onko AI-investoinnit perusteltu oikein</div>
+    </div>
+    <div class="kai-bv-col after">
+      <div class="kai-bv-head">Jälkeen</div>
+      <div class="kai-bv-item">Hallitus osaa haastaa johdon AI-ehdotukset liiketoimintaperustein</div>
+      <div class="kai-bv-item">AI Act -vastuut selvillä, due diligence hallinnassa</div>
+      <div class="kai-bv-item">Hallituksella ajantasainen tilannekuva yrityksen AI-riskeistä</div>
+      <div class="kai-bv-item">Investointien arviointi: ROI-kriteerit selvät ennen hyväksyntää</div>
+    </div>
+  </div>
+
+  <!-- Referenssit -->
+  <hr class="kai-rule">
+  <div class="kai-label">Referenssit</div>
+  <h2 class="kai-h2">Mitä johtajat sanovat</h2>
+  <div class="kai-quotes">
+    <div class="kai-quote">
+      <div class="kai-quote-text">"Mertsi on loistava valmentaja. Hänellä on tapa haastaa sinut löytämään vastauksesi itse."</div>
+      <div class="kai-quote-name">Johanna Starck</div>
+      <div class="kai-quote-title">CEO, PostNord</div>
+    </div>
+    <div class="kai-quote">
+      <div class="kai-quote-text">"Mertsi on loistava yritysvalmentaja. Hänen vahvuuksiaan on laaja kokemus eri toimialoilta sekä vahva halu kehittää ihmisiä."</div>
+      <div class="kai-quote-name">Antti Niitynpää</div>
+      <div class="kai-quote-title">President and CEO, Luotea Oyj</div>
+    </div>
+  </div>
+
+  <!-- Valmentaja -->
+  <hr class="kai-rule">
+  <div class="kai-label">Valmentaja</div>
+  <div class="kai-coach">
+    <div class="kai-coach-name">Mertsi Lanki</div>
+    <div class="kai-coach-role">Senior Executive Coach · Rokmind Oy · MBA, viennin johtaminen</div>
+    <div class="kai-coach-stats">
+      <div class="kai-stat"><div class="kai-stat-num">500+</div><div class="kai-stat-label">organisaatiota</div></div>
+      <div class="kai-stat"><div class="kai-stat-num">20+</div><div class="kai-stat-label">vuotta kokemusta</div></div>
+      <div class="kai-stat"><div class="kai-stat-num">6</div><div class="kai-stat-label">perustettua yritystä</div></div>
+    </div>
+    <ul class="kai-coach-creds">
+      <li>Turvallisuuskriittisten organisaatioiden konsultti: Puolustusvoimat, pankkien pääkonttorit, ulkomaiset lähetystöt</li>
+      <li>Asemapaikka Odessa, Ukraina — reaaliaikainen kyberturvallisuusymmärrys paineen alla</li>
+      <li>Puhuu hallituksen kieltä: riski, arvo, vastuu — ei teknistä jargonia</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="kai-cta-box">
+    <h3>Selvitetään 30 minuutissa,<br>miten varustaa hallituksenne tekoälyaikaan</h3>
+    <p>Kartoitan tilanteen ja kerron konkreettisesti mitä hallituksen on ymmärrettävä. Ei sitoumuksia.</p>
+    <a class="kai-cta-btn" href="https://calendar.app.google/Kx4axzwGk1AyJjUo9" target="_blank">Varaa strategiapuhelu →</a>
+    <div class="kai-cta-sub">mertsi@rokmind.fi &nbsp;·&nbsp; linkedin.com/in/mertsilanki</div>
+  </div>
+
+</div>

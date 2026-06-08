@@ -1,0 +1,359 @@
+<!-- ============================================================
+     ARTIKKELI: Strateginen näkökulma tekoälyn johtamiseen
+     Paste tämä Kajabi-editorissa "Custom Code" -lohkoon
+     "Varaa strategiapuhelu" -napin ALLE
+     ============================================================ -->
+
+<style>
+  .kba-wrap *{box-sizing:border-box;margin:0;padding:0}
+  .kba-wrap{
+    max-width:720px;
+    margin:60px auto;
+    font-family:'Georgia','Times New Roman',serif;
+    color:#1a1a1a;
+    padding:0 20px;
+  }
+
+  /* Divider yläpuolelle */
+  .kba-divider{
+    border:none;
+    border-top:2px solid #1a1a1a;
+    margin:0 0 40px;
+  }
+
+  /* Kicker */
+  .kba-kicker{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#185FA5;
+    margin-bottom:14px;
+  }
+
+  /* Otsikko */
+  .kba-headline{
+    font-size:clamp(26px,4vw,38px);
+    font-weight:700;
+    line-height:1.15;
+    color:#1a1a1a;
+    margin-bottom:18px;
+  }
+
+  /* Ingressi */
+  .kba-deck{
+    font-style:italic;
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+    border-left:4px solid #185FA5;
+    padding-left:16px;
+    margin-bottom:20px;
+  }
+
+  /* Meta */
+  .kba-meta{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:11px;
+    color:#999;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    padding:8px 0;
+    margin-bottom:32px;
+  }
+
+  /* Body-teksti */
+  .kba-p{
+    font-size:16px;
+    line-height:1.85;
+    color:#1a1a1a;
+    margin-bottom:16px;
+  }
+
+  /* Section label */
+  .kba-label{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#185FA5;
+    margin:40px 0 8px;
+  }
+
+  /* Alaotsikko */
+  .kba-h2{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.3;
+    color:#1a1a1a;
+    margin-bottom:16px;
+  }
+
+  /* Viiva osioiden välissä */
+  .kba-rule{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:40px 0 0;
+  }
+
+  /* Prioriteetti-kortit */
+  .kba-priority-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:20px 0 24px;
+  }
+  .kba-pcard{
+    background:#EAF2FB;
+    border:1px solid #C5DCF5;
+    border-radius:8px;
+    padding:20px 14px;
+    text-align:center;
+  }
+  .kba-pnum{
+    font-size:32px;
+    font-weight:700;
+    color:#185FA5;
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .kba-ptitle{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.4;
+    color:#1a1a1a;
+  }
+
+  /* Pull-quote */
+  .kba-pullquote{
+    border-top:2px solid #1a1a1a;
+    border-bottom:1px solid #ddd;
+    padding:20px 0;
+    margin:28px 0;
+    font-style:italic;
+    font-size:18px;
+    line-height:1.5;
+    color:#1a1a1a;
+  }
+
+  /* Riskiboksit */
+  .kba-risk{
+    background:#FDF2F2;
+    border:1px solid #F0CCCC;
+    border-left:4px solid #C0392B;
+    border-radius:6px;
+    padding:16px 18px;
+    margin-bottom:10px;
+  }
+  .kba-risk-h{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    color:#A32D2D;
+    margin-bottom:6px;
+  }
+  .kba-risk-b{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:13px;
+    line-height:1.6;
+    color:#555;
+  }
+
+  /* Ihminen-kortit */
+  .kba-human-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin:20px 0;
+  }
+  .kba-hcard{
+    background:#EEF6E4;
+    border:1px solid #C5E0A0;
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .kba-hcard-h{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    font-weight:700;
+    color:#3B6D11;
+    margin-bottom:5px;
+  }
+  .kba-hcard-b{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    line-height:1.55;
+    color:#555;
+  }
+
+  /* Arvo-lista */
+  .kba-value-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+    gap:12px;
+  }
+  .kba-value-item:last-child{border-bottom:none}
+  .kba-vi-main{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    color:#1a1a1a;
+  }
+  .kba-vi-sub{
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    color:#999;
+    white-space:nowrap;
+  }
+
+  /* Loppuboksi */
+  .kba-close{
+    background:#EAF2FB;
+    border:1px solid #C5DCF5;
+    border-radius:8px;
+    padding:24px 28px;
+    margin-top:32px;
+    font-size:15px;
+    line-height:1.8;
+    color:#1a1a1a;
+  }
+
+  /* Mobile */
+  @media(max-width:560px){
+    .kba-priority-grid{grid-template-columns:1fr}
+    .kba-human-grid{grid-template-columns:1fr}
+    .kba-value-item{flex-direction:column;align-items:flex-start}
+    .kba-vi-sub{display:none}
+  }
+</style>
+
+<div class="kba-wrap">
+
+  <hr class="kba-divider">
+
+  <div class="kba-kicker">Johtaminen &amp; strategia · Kesäkuu 2026</div>
+
+  <h2 class="kba-headline">Strateginen näkökulma<br>tekoälyn johtamiseen</h2>
+
+  <p class="kba-deck">
+    On tärkeää erottaa &lsquo;tekoälystrategian johtaminen&rsquo; ja &lsquo;tekoälyn strateginen johtaminen&rsquo;.
+    Kyse ei ole vain teknisestä tiekartasta, vaan siitä, miten omistajat, hallitukset ja johtoryhmät
+    ohjaavat yritystä maailmassa, jossa AI muuttaa kilpailuedun fundamentit.
+  </p>
+
+  <div class="kba-meta">8 min lukuaika &nbsp;|&nbsp; Tekoäly &middot; Hallitus &middot; Strategia</div>
+
+  <p class="kba-p">Vuonna 2026 tekoäly ei ole enää pilottiprojekti tai IT-osaston kokeilukenttä. Se on yrityksen arvoon ja kilpailukykyyn suoraan vaikuttava strateginen muuttuja — ja sen johtaminen on siirtynyt CIO:lta hallituksen pöydälle.</p>
+
+  <p class="kba-p">Voittajiksi nousevat ne organisaatiot, joiden ylin johto uskaltaa katsoa muutosta suoraan silmiin: rakentaa selkeän hallintamallin, kohdentaa tekoäly liiketoiminnan ytimeen ja varmistaa, että koko organisaatio kykenee ottamaan vastaan tämän historiallisen murroksen täyden tehon.</p>
+
+  <hr class="kba-rule">
+  <div class="kba-label">Strategia &amp; toimintamalli</div>
+  <h3 class="kba-h2">Kolme kriittistä prioriteettia johtoryhmälle</h3>
+
+  <div class="kba-priority-grid">
+    <div class="kba-pcard">
+      <div class="kba-pnum">1</div>
+      <div class="kba-ptitle">AI-hallinto<br>(Governance)</div>
+    </div>
+    <div class="kba-pcard">
+      <div class="kba-pnum">2</div>
+      <div class="kba-ptitle">Strateginen<br>kohdentaminen</div>
+    </div>
+    <div class="kba-pcard">
+      <div class="kba-pnum">3</div>
+      <div class="kba-ptitle">Toimintamalli<br>(Operating Model)</div>
+    </div>
+  </div>
+
+  <p class="kba-p">Ensimmäinen ja kriittisin kysymys kuuluu: <strong>kuka omistaa AI-riskin, päätökset ja vastuullisuuden organisaatiossasi?</strong> Ilman selkeää vastuunjaon määrittelyä yritys altistuu juridisille, taloudellisille ja maineellisille riskeille, joiden lasku lankeaa viime kädessä omistajille ja hallitukselle.</p>
+
+  <p class="kba-p">Toinen prioriteetti — strateginen kohdentaminen — tarkoittaa, että tekoälyä ei saa käyttää vain pienten rutiinitehtävien näpertelyyn. Se on valjastettava ratkaisemaan yrityksen isoimmat haasteet: kilpailuedun luominen, uuden liikevaihdon avaaminen tai merkittävät tuottavuusloikat. <strong>Jos AI-hanke ei tue ydinstrategiaa, sille ei pitäisi myöntää budjettia.</strong></p>
+
+  <div class="kba-pullquote">
+    &ldquo;Tekoäly ei ole enää erillinen IT-projekti — se on yrityksen arvoon suoraan vaikuttava strateginen muuttuja.&rdquo;
+  </div>
+
+  <p class="kba-p">Kolmantena tulee toimintamalli: rakennetaanko yritykseen keskitetty AI-osaamiskeskus, hajautetaanko tekoäly liiketoimintayksiköihin vai valitaanko näiden hybridi? Roolit ja raportointilinjat on sovittava saumattomasti, jotta tekoäly siirtyy kalvosulkeisista osaksi jokapäiväistä työkulttuuria.</p>
+
+  <hr class="kba-rule">
+  <div class="kba-label">Riskit &amp; turvallisuus</div>
+  <h3 class="kba-h2">Kolme riskiä, jotka vaativat johdon välitöntä huomiota</h3>
+
+  <div class="kba-risk">
+    <div class="kba-risk-h">EU:n tekoälyasetus (AI Act) 2026</div>
+    <div class="kba-risk-b">Sääntelyn laiminlyönti kohdistuu suoraan yrityksen johtoon juridisena ja operatiivisena vastuuna. Hallituksen on varmistettava selkeä inventaario käytetyistä AI-järjestelmistä ja prosessi niiden vaatimustenmukaisuuden todentamiseksi.</div>
+  </div>
+
+  <div class="kba-risk">
+    <div class="kba-risk-h">Kyberturvallisuus &amp; generatiivinen AI</div>
+    <div class="kba-risk-b">Perinteinen palomuuriajattelu on vanhentunut. GenAI on antanut rikollisille uudenlaiset aseet: kehittyneet tietovuodot, deepfake-identiteettivarkaudet ja johdon nimissä tehdyt ääniväärennökset ovat arkipäiväistyneet.</div>
+  </div>
+
+  <div class="kba-risk">
+    <div class="kba-risk-h">Varjo-AI (Shadow AI)</div>
+    <div class="kba-risk-b">Hiljainen ja näkymätön riski, joka tapahtuu juuri nyt organisaation sisällä. Kun työntekijä kopioi strategiapaperin tai talousluvut kolmannen osapuolen ilmaiseen AI-sovellukseen, kyseessä on vakava tietovuoto. Ratkaisu ei ole kielto, vaan turvalliset viralliset AI-työkalut.</div>
+  </div>
+
+  <hr class="kba-rule">
+  <div class="kba-label">Ihminen &amp; muutos</div>
+  <h3 class="kba-h2">Suurin este on inhimillinen — ei tekninen</h3>
+
+  <p class="kba-p">Tekoälymurroksessa teknologia on vain väline: ihminen ratkaisee onnistumisen. Suurin este tuottavuusloikkien saavuttamiselle ei ole ohjelmistojen puute, vaan organisaation kyky omaksua uusia työtapoja.</p>
+
+  <div class="kba-human-grid">
+    <div class="kba-hcard">
+      <div class="kba-hcard-h">Osaaminen &amp; pätevöittäminen</div>
+      <div class="kba-hcard-b">Yrityksen markkina-arvo riippuu osaamispääomasta. Tarvitaan järjestelmällistä pätevöittämistä kaikilla tasoilla — johdosta etulinjan tiimeihin.</div>
+    </div>
+    <div class="kba-hcard">
+      <div class="kba-hcard-h">Työn uudelleensuunnittelu</div>
+      <div class="kba-hcard-b">Pelkkä tekoälyn liimaaminen vanhojen prosessien päälle automatisoi vanhaa tehottomuutta. Roolit on rakennettava uudelleen.</div>
+    </div>
+    <div class="kba-hcard">
+      <div class="kba-hcard-h">Muutoksen johtaminen</div>
+      <div class="kba-hcard-b">Hiljainen vastarinta voi pysäyttää parhaankin AI-strategian. Tekoäly on esiteltävä kumppanina — ei korvaajana.</div>
+    </div>
+    <div class="kba-hcard">
+      <div class="kba-hcard-h">Human-in-the-loop</div>
+      <div class="kba-hcard-b">Vaikka AI itsenäistyy, lopullinen vastuu on aina ihmisellä. Kriittisiin päätöksiin tarvitaan selkeät hyväksymiskerrokset.</div>
+    </div>
+  </div>
+
+  <hr class="kba-rule">
+  <div class="kba-label">Arvo &amp; teknologia</div>
+  <h3 class="kba-h2">Mitattavat tulokset — ei enää pelkkää pöhinää</h3>
+
+  <p class="kba-p">Omistajat eivät enää hyväksy tekoälyä pelkkänä brändi-investointina. Vuonna 2026 sen on näyttäydyttävä tuloslaskelmassa.</p>
+
+  <div>
+    <div class="kba-value-item">
+      <span class="kba-vi-main">AI:n ROI — mitattava liiketoiminnallinen vaikutus</span>
+      <span class="kba-vi-sub">KPI jokaiselle hankkeelle</span>
+    </div>
+    <div class="kba-value-item">
+      <span class="kba-vi-main">Data Readiness — tietojen laatu ensin</span>
+      <span class="kba-vi-sub">Ennen AI:n skaalaamista</span>
+    </div>
+    <div class="kba-value-item">
+      <span class="kba-vi-main">Agenttinen AI — seuraava itsenäinen aalto</span>
+      <span class="kba-vi-sub">Autonomiset prosessit</span>
+    </div>
+    <div class="kba-value-item">
+      <span class="kba-vi-main">Läpinäkyvyys — luottamus on liiketoiminnan perusta</span>
+      <span class="kba-vi-sub">Merkitseminen &amp; seuranta</span>
+    </div>
+  </div>
+
+  <div class="kba-close">
+    Tekoälyn johtaminen ei ole kerralla valmis projekti. Se on jatkuva sykli, joka vaatii neljännesvuosittaisia tarkistuksia, hallinnon iteraatiota ja rohkeutta suunnata resurssit sinne, missä vaikutus on suurin. <strong>Hallitus ei voi valvoa sitä, mitä se ei ymmärrä</strong> — siksi myös hallituksen jäsenten oman AI-osaamisen kehittäminen on strateginen prioriteetti.
+  </div>
+
+</div>
+<!-- /kba-wrap -->

@@ -1,0 +1,510 @@
+<!-- ============================================================
+     MERTSI LANKI — Esittelysivu
+     Kajabi Custom Code -lohko
+     URL-ehdotus: kubera.fi/mertsi tai kubera.fi/valmentaja
+     ============================================================ -->
+
+<style>
+  .ml * { box-sizing: border-box; margin: 0; padding: 0; }
+  .ml {
+    max-width: 720px;
+    margin: 0 auto;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1a1a1a;
+    padding: 0 20px 60px;
+  }
+
+  /* ── Typografia ── */
+  .ml-kicker {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: #185FA5; margin-bottom: 14px;
+  }
+  .ml-name {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700; line-height: 1.08;
+    color: #1a1a1a; margin-bottom: 10px;
+  }
+  .ml-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px; color: #555;
+    margin-bottom: 22px; line-height: 1.5;
+  }
+  .ml-rule { border: none; border-top: 1px solid #e0e0e0; margin: 44px 0 0; }
+  .ml-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: #185FA5; margin: 44px 0 8px;
+  }
+  .ml-h2 {
+    font-size: clamp(20px, 3vw, 26px); font-weight: 700;
+    line-height: 1.25; color: #1a1a1a; margin-bottom: 16px;
+  }
+  .ml-p {
+    font-size: 16px; line-height: 1.85;
+    color: #1a1a1a; margin-bottom: 14px;
+  }
+
+  /* ── Stat-rivi ── */
+  .ml-stats {
+    display: flex; gap: 0;
+    border: 1px solid #e0e0e0; border-radius: 8px;
+    overflow: hidden; margin: 22px 0;
+  }
+  .ml-stat {
+    flex: 1; text-align: center;
+    padding: 18px 10px;
+    border-right: 1px solid #e0e0e0;
+  }
+  .ml-stat:last-child { border-right: none; }
+  .ml-stat-num {
+    font-size: 30px; font-weight: 700;
+    color: #185FA5; line-height: 1; margin-bottom: 4px;
+  }
+  .ml-stat-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #888; line-height: 1.3;
+  }
+
+  /* ── Odessa-highlight ── */
+  .ml-odessa {
+    background: #EAF2FB;
+    border: 1px solid #C5DCF5;
+    border-left: 4px solid #185FA5;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 22px; margin: 20px 0;
+  }
+  .ml-odessa-flag {
+    font-size: 22px; margin-bottom: 8px;
+  }
+  .ml-odessa-h {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: #185FA5; margin-bottom: 8px;
+    letter-spacing: .04em; text-transform: uppercase;
+  }
+  .ml-odessa-p {
+    font-size: 15px; line-height: 1.8; color: #1a1a1a;
+  }
+
+  /* ── Pullquote ── */
+  .ml-pullquote {
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0; margin: 32px 0;
+    font-style: italic; font-size: 19px;
+    line-height: 1.5; color: #1a1a1a;
+  }
+
+  /* ── Palvelut 2-grid ── */
+  .ml-services {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; margin: 20px 0;
+  }
+  .ml-service {
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #185FA5;
+    border-radius: 6px; padding: 20px 18px;
+  }
+  .ml-service-icon { font-size: 24px; margin-bottom: 10px; }
+  .ml-service-h {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px; font-weight: 700;
+    color: #1a1a1a; margin-bottom: 8px; line-height: 1.3;
+  }
+  .ml-service-b {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; line-height: 1.65; color: #555;
+  }
+
+  /* ── Turvallisuustausta ── */
+  .ml-security {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 22px 24px;
+    margin: 20px 0;
+  }
+  .ml-security-h {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: #1a1a1a; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ml-security-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .ml-sec-item {
+    background: #fff; border: 1px solid #e8e8e8;
+    border-radius: 4px; padding: 8px 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; color: #444; line-height: 1.35;
+    text-align: center;
+  }
+
+  /* ── Tuottavuusvarkaat ── */
+  .ml-thieves { margin: 16px 0; }
+  .ml-thief {
+    display: flex; align-items: flex-start;
+    gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .ml-thief:last-child { border-bottom: none; }
+  .ml-thief-icon {
+    font-size: 18px; flex-shrink: 0; margin-top: 1px;
+  }
+  .ml-thief-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px; line-height: 1.5; color: #1a1a1a;
+  }
+  .ml-thief-sub {
+    font-size: 12px; color: #888; margin-top: 2px;
+  }
+
+  /* ── Referenssit ── */
+  .ml-quotes {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 14px; margin: 20px 0;
+  }
+  .ml-quote {
+    background: #f8f8f8; border-left: 3px solid #185FA5;
+    border-radius: 0 6px 6px 0; padding: 16px 18px;
+  }
+  .ml-quote-text {
+    font-style: italic; font-size: 14px;
+    line-height: 1.65; color: #333; margin-bottom: 10px;
+  }
+  .ml-quote-name {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 700; color: #1a1a1a;
+  }
+  .ml-quote-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; color: #888;
+  }
+
+  /* ── Logos ── */
+  .ml-logos {
+    display: flex; flex-wrap: wrap;
+    gap: 8px; margin: 16px 0 0;
+  }
+  .ml-logo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px; font-weight: 600; color: #555;
+    border: 1px solid #ddd; border-radius: 20px;
+    padding: 5px 12px; background: #fafafa;
+  }
+
+  /* ── Credentials ── */
+  .ml-creds {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin: 20px 0;
+  }
+  .ml-cred {
+    background: #f8f8f8; border: 1px solid #e8e8e8;
+    border-radius: 6px; padding: 14px 16px;
+  }
+  .ml-cred-h {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 700;
+    color: #185FA5; margin-bottom: 4px;
+  }
+  .ml-cred-b {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; line-height: 1.5; color: #555;
+  }
+
+  /* ── Hashtags ── */
+  .ml-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 20px 0;
+  }
+  .ml-tag {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: #185FA5;
+    background: #EAF2FB; border: 1px solid #C5DCF5;
+    border-radius: 4px; padding: 4px 10px;
+    text-decoration: none;
+  }
+
+  /* ── CTA ── */
+  .ml-cta {
+    background: #0F3A6B; border-radius: 8px;
+    padding: 48px 32px; text-align: center; margin: 36px 0 0;
+  }
+  .ml-cta-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: #7FB8E8; margin-bottom: 16px;
+  }
+  .ml-cta h3 {
+    font-size: clamp(20px, 3vw, 28px); font-weight: 700;
+    color: #fff; line-height: 1.25; margin-bottom: 14px;
+  }
+  .ml-cta p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px; color: #A8C8E8;
+    line-height: 1.7; margin-bottom: 28px;
+    max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .ml-cta-btn {
+    display: inline-block; background: #fff; color: #0F3A6B;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px; font-weight: 700; letter-spacing: .04em;
+    text-decoration: none; padding: 16px 36px; border-radius: 4px;
+  }
+  .ml-cta-promise {
+    display: flex; justify-content: center;
+    gap: 24px; flex-wrap: wrap;
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.15);
+  }
+  .ml-cta-promise span {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; color: #7FB8E8;
+  }
+  .ml-cta-promise span::before { content: "✓ "; }
+  .ml-cta-sub {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px; color: #6A9DC0; margin-top: 16px;
+  }
+  .ml-cta-sub a { color: #7FB8E8; text-decoration: none; }
+
+  /* ── Mobile ── */
+  @media(max-width: 560px) {
+    .ml-stats { flex-wrap: wrap; }
+    .ml-stat { flex: 1 1 45%; border-bottom: 1px solid #e0e0e0; }
+    .ml-services, .ml-quotes, .ml-creds { grid-template-columns: 1fr; }
+    .ml-security-grid { grid-template-columns: repeat(2, 1fr); }
+    .ml-cta-promise { gap: 12px; }
+  }
+</style>
+
+<div class="ml">
+
+  <!-- ══ HERO ══ -->
+  <div class="ml-kicker">Senior Executive Coach · Rokmind Oy</div>
+  <h1 class="ml-name">Mertsi Lanki</h1>
+  <div class="ml-title">
+    Tekoälyn strateginen johtaminen &amp; AI-kyberturvallisuus &nbsp;·&nbsp;
+    MBA, viennin johtaminen &nbsp;·&nbsp; Odessa, Ukraina
+  </div>
+
+  <!-- Stat-rivi -->
+  <div class="ml-stats">
+    <div class="ml-stat">
+      <div class="ml-stat-num">500+</div>
+      <div class="ml-stat-label">organisaatiota sparrattu</div>
+    </div>
+    <div class="ml-stat">
+      <div class="ml-stat-num">20+</div>
+      <div class="ml-stat-label">vuotta liikkeenjohtoa</div>
+    </div>
+    <div class="ml-stat">
+      <div class="ml-stat-num">6</div>
+      <div class="ml-stat-label">perustettua yritystä</div>
+    </div>
+    <div class="ml-stat">
+      <div class="ml-stat-num">4</div>
+      <div class="ml-stat-label">maata</div>
+    </div>
+  </div>
+
+  <!-- ══ MISSIO ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Mikä minua ajaa</div>
+  <h2 class="ml-h2">Autan johtoa navigoimaan tekoälymurroksessa — strategisesti, turvallisesti ja tuloshakuisesti</h2>
+
+  <p class="ml-p">Nykyisessä toimintaympäristössä pelkkä teknologian ihmettely ei riitä. Kyse on siitä, miten tekoäly valjastetaan osaksi yrityksen ydinstrategiaa siten, että se luo mitattavaa kilpailuetua ja tuottavuusloikkia — mutta pysyy visusti johdon hallinnassa.</p>
+
+  <p class="ml-p">Katson asioita aina omistajan ja yrittäjän silmin. En puhu IT-jargonia, vaan keskityn yrityksen arvoon, riskienhallintaan ja kasvuun.</p>
+
+  <!-- Odessa -->
+  <div class="ml-odessa">
+    <div class="ml-odessa-flag">🇺🇦</div>
+    <div class="ml-odessa-h">Näköalapaikka, jota ei voi ostaa</div>
+    <p class="ml-odessa-p">Asemapaikastani Odessasta, Ukrainasta käsin minulla on ainutlaatuinen reaaliaikainen ymmärrys siitä, miten kyberturvallisuus ja digitaalinen resilienssi toimivat äärimmäisen paineen alla — ei teoriassa, vaan käytännössä, sodanajan olosuhteissa. Tämä kriisiresilienssin kokemus yhdistettynä syvälliseen turvateknologiseen taustaani ja vientijohtamisen MBA-tutkintoon tekee minusta sillan syvän turvallisuusosaamisen ja käytännön liiketoimintastrategian välillä.</p>
+  </div>
+
+  <div class="ml-pullquote">
+    &ldquo;Pelkkä teknologian ihmettely ei riitä. Kyse on siitä, kuka pitää ohjat käsissään.&rdquo;
+  </div>
+
+  <!-- ══ MITEN AUTAN ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Miten autan yritystänne</div>
+  <h2 class="ml-h2">Kaksi erikoisaluetta — yksi selkeä tavoite</h2>
+
+  <div class="ml-services">
+    <div class="ml-service">
+      <div class="ml-service-icon">🎯</div>
+      <div class="ml-service-h">Tekoälyn strateginen johtaminen</div>
+      <div class="ml-service-b">Vien AI-vision kalvosulkeista käytännön liiketoimintaprosesseihin ja työkulttuuriin. Autan johtoryhmiä tunnistamaan ne vipuvarret, joilla tekoäly muuttuu kustannuserästä tuloksentekijäksi.</div>
+    </div>
+    <div class="ml-service">
+      <div class="ml-service-icon">🛡️</div>
+      <div class="ml-service-h">Tekoälyturvallisuus &amp; AI Governance</div>
+      <div class="ml-service-b">EU:n tekoälyasetus (AI Act) tuo johdolle suoria juridisia ja operatiivisia vastuita. Autan hallituksia ja toimitusjohtajia ymmärtämään riskiluokat, varmistamaan sääntelyn mukaisuuden ja rakentamaan turvalliset raamit AI-järjestelmille.</div>
+    </div>
+  </div>
+
+  <!-- ══ TURVALLISUUSTAUSTA ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Kokemus turvallisuuskriittisistä ympäristöistä</div>
+  <h2 class="ml-h2">Olen konsultoinut organisaatioita, joiden rimakorkeus on kaikkein korkeimmalla</h2>
+  <p class="ml-p">Odessan oppien lisäksi minulla on pitkä tausta vaativasta turvallisuussuunnittelusta ja konsultoinnista — ympäristöissä, joissa virheillä on aidot seuraukset.</p>
+
+  <div class="ml-security">
+    <div class="ml-security-h">💼 Asiakasorganisaatiot turvallisuuskriittisistä ympäristöistä</div>
+    <div class="ml-security-grid">
+      <div class="ml-sec-item">Puolustusvoimat</div>
+      <div class="ml-sec-item">High Security -kohteet</div>
+      <div class="ml-sec-item">Ulkomaiset lähetystöt</div>
+      <div class="ml-sec-item">Teleyhtiöt</div>
+      <div class="ml-sec-item">Pankkien pääkonttorit</div>
+      <div class="ml-sec-item">Johtavat pörssiyhtiöt</div>
+    </div>
+  </div>
+
+  <!-- ══ TUOTTAVUUSVARKAAT ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Mitä tekoäly eliminoi</div>
+  <h2 class="ml-h2">AI poistaa organisaatiosi suurimmat tuottavuusvarkaat</h2>
+  <p class="ml-p">Tekoäly ei ole vain automatisointityökalu — se on kilpailuedun rakentaja, kun se kohdistetaan oikein.</p>
+
+  <div class="ml-thieves">
+    <div class="ml-thief">
+      <div class="ml-thief-icon">📉</div>
+      <div>
+        <div class="ml-thief-text">Tehoton sisäinen viestintä ja tiedonkulku</div>
+        <div class="ml-thief-sub">Tieto ei kulje — päätöksenteko hidastuu ja virheet lisääntyvät</div>
+      </div>
+    </div>
+    <div class="ml-thief">
+      <div class="ml-thief-icon">📉</div>
+      <div>
+        <div class="ml-thief-text">Resursseja tuhlaava päällekkäinen työ</div>
+        <div class="ml-thief-sub">Sama työ tehdään useaan kertaan eri osastoilla</div>
+      </div>
+    </div>
+    <div class="ml-thief">
+      <div class="ml-thief-icon">📉</div>
+      <div>
+        <div class="ml-thief-text">Jatkuvat keskeytykset ja pirstaloitunut työaika</div>
+        <div class="ml-thief-sub">Asiantuntijat käyttävät aikansa rutiinikysymyksiin vastaamiseen</div>
+      </div>
+    </div>
+    <div class="ml-thief">
+      <div class="ml-thief-icon">📉</div>
+      <div>
+        <div class="ml-thief-text">Tietojärjestelmien ja dokumenttien viidakossa seikkailu</div>
+        <div class="ml-thief-sub">Oikean tiedon löytäminen vie enemmän aikaa kuin itse työ</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CREDENTIALS ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Tausta &amp; osaaminen</div>
+  <h2 class="ml-h2">Kokemus, joka yhdistää turvallisuuden ja liiketoiminnan</h2>
+
+  <div class="ml-creds">
+    <div class="ml-cred">
+      <div class="ml-cred-h">MBA — viennin johtaminen</div>
+      <div class="ml-cred-b">Liiketoimintastrategian ja turvateknologian yhdistäminen käytännön johtamiseen kansainvälisessä ympäristössä.</div>
+    </div>
+    <div class="ml-cred">
+      <div class="ml-cred-h">EU AI Act -asiantuntemus</div>
+      <div class="ml-cred-b">Autan hallituksia ja johtoryhmiä ymmärtämään sääntelyvastuut ja rakentamaan compliance-prosessit ennen kuin ne tulevat pakollisiksi.</div>
+    </div>
+    <div class="ml-cred">
+      <div class="ml-cred-h">Yrittäjä &amp; omistaja</div>
+      <div class="ml-cred-b">6 perustettua yritystä 4 maassa. Katson asioita aina omistajan silmin — en konsultin.</div>
+    </div>
+    <div class="ml-cred">
+      <div class="ml-cred-h">Kriisiresilienssi — Odessa</div>
+      <div class="ml-cred-b">Reaaliaikainen ymmärrys kyberturvallisuudesta ja digitaalisesta resilienssistä sotaolosuhteissa — ainutlaatuinen näkökulma.</div>
+    </div>
+  </div>
+
+  <!-- ══ REFERENSSIT ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Mitä johtajat sanovat</div>
+  <h2 class="ml-h2">Johtajia, jotka ovat jo ottaneet askeleen</h2>
+
+  <div class="ml-quotes">
+    <div class="ml-quote">
+      <div class="ml-quote-text">"Mertsi on loistava valmentaja. Hänellä on tapa haastaa sinut löytämään vastauksesi itse."</div>
+      <div class="ml-quote-name">Johanna Starck</div>
+      <div class="ml-quote-title">CEO, PostNord</div>
+    </div>
+    <div class="ml-quote">
+      <div class="ml-quote-text">"Tein valmennusohjelman Mertsin kanssa — yksi parhaista koulutuskokemuksista, joita minulla on ollut urani aikana."</div>
+      <div class="ml-quote-name">Tommi Hänninen</div>
+      <div class="ml-quote-title">Co-Founder &amp; CEO, Joisto Group</div>
+    </div>
+    <div class="ml-quote">
+      <div class="ml-quote-text">"Mertsi on loistava yritysvalmentaja. Hänen vahvuuksiaan on laaja kokemus eri toimialoilta sekä vahva halu kehittää ihmisiä."</div>
+      <div class="ml-quote-name">Antti Niitynpää</div>
+      <div class="ml-quote-title">President and CEO, Luotea Oyj</div>
+    </div>
+    <div class="ml-quote">
+      <div class="ml-quote-text">"Kymmenen vuoden aikana olemme käyneet Mertsin kanssa henkilökohtaisia ja ryhmävalmennuksia. Palautteet ovat olleet hyviä."</div>
+      <div class="ml-quote-name">Johannes Kangas</div>
+      <div class="ml-quote-title">ex-CEO, Forenom Oy</div>
+    </div>
+  </div>
+
+  <div class="ml-logos">
+    <span class="ml-logo">PostNord</span>
+    <span class="ml-logo">Lassila &amp; Tikanoja</span>
+    <span class="ml-logo">Forenom</span>
+    <span class="ml-logo">Barona</span>
+    <span class="ml-logo">ISS</span>
+    <span class="ml-logo">SOK</span>
+    <span class="ml-logo">Gartner</span>
+    <span class="ml-logo">Betolar</span>
+    <span class="ml-logo">Wunderdog</span>
+    <span class="ml-logo">Joisto Group</span>
+  </div>
+
+  <!-- ══ HASHTAGS ══ -->
+  <hr class="ml-rule">
+  <div class="ml-label">Aihepiirit</div>
+  <div class="ml-tags">
+    <span class="ml-tag">#Tekoäly</span>
+    <span class="ml-tag">#AIGovernance</span>
+    <span class="ml-tag">#Kyberturvallisuus</span>
+    <span class="ml-tag">#Johtaminen</span>
+    <span class="ml-tag">#Hallitustyöskentely</span>
+    <span class="ml-tag">#Yritysturvallisuus</span>
+    <span class="ml-tag">#Tuottavuusloikka</span>
+    <span class="ml-tag">#AIAct</span>
+    <span class="ml-tag">#Strategia</span>
+    <span class="ml-tag">#Resilienssi</span>
+  </div>
+
+  <!-- ══ CTA ══ -->
+  <div class="ml-cta">
+    <div class="ml-cta-label">Keskustellaanko suunnasta?</div>
+    <h3>Sparrauskumppani, joka uskaltaa haastaa perinteisen ajattelun</h3>
+    <p>Kun haluat konkreettisia, kriisinkestäviä ratkaisuja tekoälyaikakauden johtamiseen — ota yhteyttä. 30 minuutin keskustelu, ei sitoumuksia.</p>
+    <a class="ml-cta-btn" href="https://calendar.app.google/Kx4axzwGk1AyJjUo9" target="_blank">Varaa aika kalenterista →</a>
+    <div class="ml-cta-promise">
+      <span>Omistajan näkökulma</span>
+      <span>Ei IT-jargonia</span>
+      <span>Kriisinkestävät ratkaisut</span>
+    </div>
+    <div class="ml-cta-sub">
+      <a href="mailto:mertsi@rokmind.fi">mertsi@rokmind.fi</a>
+      &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/mertsilanki" target="_blank">linkedin.com/in/mertsilanki</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.kubera.fi" target="_blank">kubera.fi</a>
+    </div>
+  </div>
+
+</div>
