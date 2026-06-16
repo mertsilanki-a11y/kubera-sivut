@@ -1,0 +1,87 @@
+<!-- ============================================================
+     JOHTAJA.AI — IT-johtajille / Johtava ohjelmistokehittäjä
+     ============================================================ -->
+<div class="kai">
+
+  <div class="kai-breadcrumb">
+    <a href="https://www.kubera.fi/johtaja-ai">← Johtaja.AI</a> &nbsp;/&nbsp; IT-johtajille
+  </div>
+
+  <div class="kai-kicker">Johtaja.AI · IT-johtajille</div>
+  <h1 class="kai-headline">Tekoäly tuo voimaa —<br>mutta myös uusia hyökkäyspintoja.</h1>
+  <div class="kai-deck">
+    Johtava ohjelmistokehittäjä ei enää vastaa vain koodista. Hän vastaa tekoälyn, kyberturvallisuuden ja digitaalisen itsenäisyyden risteyskohdasta. Tämä valmennus varustaa sinut johtamaan teknologiaa strategisesti — ei vain operatiivisesti.
+  </div>
+  <div class="kai-meta">Johtaja.AI-valmennus · Mertsi Lanki · 14 947 € alv 0%</div>
+
+  <!-- Kipupisteet -->
+  <hr class="kai-rule">
+  <div class="kai-label">Tuttu tilanne?</div>
+  <h2 class="kai-h2">IT-johtajan kolme kipupistettä</h2>
+
+  <div class="kai-pain">
+    <div class="kai-pain-h">Generatiivinen AI tuo uusia kyberuhkia</div>
+    <div class="kai-pain-b">Deepfake-identiteetit, automaattiset tietovuodot ja johdon nimissä tehdyt ääniväärennökset ovat arkipäivää. Perinteinen palomuuriajattelu ei enää riitä.</div>
+  </div>
+  <div class="kai-pain">
+    <div class="kai-pain-h">Shadow AI leviää hallitsemattomasti</div>
+    <div class="kai-pain-b">Kehittäjät ja tiimit käyttävät kolmannen osapuolen AI-työkaluja ilman datapolitiikkaa. Riskinä on kriittisten tietojen vuotaminen ulos.</div>
+  </div>
+  <div class="kai-pain">
+    <div class="kai-pain-h">Strateginen rooli puuttuu</div>
+    <div class="kai-pain-b">IT nähdään toteuttajana, ei suunnannäyttäjänä. Johtava kehittäjä jää sivuun, vaikka juuri hän ymmärtää teknologian riskit ja mahdollisuudet.</div>
+  </div>
+
+  <!-- Mitä saat -->
+  <hr class="kai-rule">
+  <div class="kai-label">Mitä saat valmennuksesta</div>
+  <h2 class="kai-h2">IT-johtajan konkreettiset tulokset</h2>
+  <ul class="kai-benefits">
+    <li>Kyberturvallisuuden uusi malli generatiivisen AI:n aikakaudelle</li>
+    <li>Shadow AI:n hallintakehikko ja datapolitiikka</li>
+    <li>Selkeä rooli AI Governance -mallissa — ei vain toteuttajana</li>
+    <li>Digitaalisen itsenäisyyden strategia: miten vältät vendor lock-inin</li>
+    <li>Kyky raportoida hallitukselle AI-riskit ja tekniset kontrollit</li>
+    <li>90 päivän roadmap: tekninen toteutus + strateginen näkyvyys</li>
+  </ul>
+
+  <div class="kai-pullquote">
+    &ldquo;IT ei ole enää vain tukifunktio — se on kilpailuedun ja digitaalisen suvereniteetin vartija.&rdquo;
+  </div>
+
+  <!-- Ohjelma -->
+  <hr class="kai-rule">
+  <div class="kai-label">Ohjelman sisältö</div>
+  <h2 class="kai-h2">Teknologia + strategia yhdessä</h2>
+
+  <div class="kai-phases">
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 1</div>
+      <div class="kai-phase-title">AI-strateginen johtaminen IT-näkökulmasta</div>
+      <ul class="kai-phase-items">
+        <li>IT:n rooli AI Governance -mallissa</li>
+        <li>Digitaalinen itsenäisyys: data, algoritmit, infrastruktuuri</li>
+        <li>Vendor lock-inin riskit ja hallinta</li>
+        <li>90 päivän tekninen roadmap</li>
+      </ul>
+    </div>
+    <div class="kai-phase">
+      <div class="kai-phase-num">Osa 2</div>
+      <div class="kai-phase-title">Kyberturvallisuus &amp; compliance</div>
+      <ul class="kai-phase-items">
+        <li>Generatiivisen AI:n uudet hyökkäysvektorit</li>
+        <li>Shadow AI: tunnistaminen ja hallinta</li>
+        <li>EU AI Act + GDPR: tekniset kontrollit</li>
+        <li>Raportointimalli hallitukselle ja johdolle</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Ennen/jälkeen -->
+  <hr class="kai-rule">
+  <div class="kai-label">Muutos käytännössä</div>
+  <h2 class="kai-h2">IT-johtajan arki ennen ja jälkeen</h2>
+  <div class="kai-bv">
+    <div class="kai-bv-col before">
+      <div class="kai-bv-head">Ennen</div>
+      <div class="kai-bv-item">Kyberturva = palomuuri ja salasana
